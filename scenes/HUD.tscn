@@ -1,0 +1,521 @@
+[gd_scene load_steps=44 format=2]
+
+[ext_resource path="res://assets/fonts/Montserrat-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/HUD.gd" type="Script" id=2]
+[ext_resource path="res://scenes/weapons/WeaponIcon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/fonts/scientifica.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/fonts/loppu.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/img/top_bar_placeholder.png" type="Texture" id=6]
+[ext_resource path="res://assets/img/exp_start.png" type="Texture" id=7]
+[ext_resource path="res://assets/img/exp_end.png" type="Texture" id=8]
+[ext_resource path="res://assets/img/exp_mid.png" type="Texture" id=9]
+[ext_resource path="res://assets/fonts/loppu_mini.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://assets/img/player/hp_bar_fill.png" type="Texture" id=11]
+[ext_resource path="res://scenes/HUD/Upgrade.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/img/player/hp_bar_back.png" type="Texture" id=13]
+[ext_resource path="res://assets/img/player/hp_bar_frame.png" type="Texture" id=14]
+[ext_resource path="res://assets/img/paused_template.png" type="Texture" id=15]
+[ext_resource path="res://assets/img/skill_select.png" type="Texture" id=16]
+[ext_resource path="res://assets/img/btn_select.png" type="Texture" id=17]
+[ext_resource path="res://assets/img/skill_card.png" type="Texture" id=18]
+[ext_resource path="res://scenes/Results.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/shaders/force_solid.shader" type="Shader" id=20]
+[ext_resource path="res://scenes/HUD/Scores.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenes/HUD/SkillBar.tscn" type="PackedScene" id=22]
+[ext_resource path="res://scenes/HUD/Pause.tscn" type="PackedScene" id=23]
+[ext_resource path="res://assets/img/btn_select_highlight.png" type="Texture" id=24]
+[ext_resource path="res://scenes/HUD/Equipment.tscn" type="PackedScene" id=25]
+[ext_resource path="res://scenes/HUD/Treasure.tscn" type="PackedScene" id=26]
+[ext_resource path="res://assets/img/player/hp_bar_light.png" type="Texture" id=27]
+[ext_resource path="res://scenes/HUD/Hearts.tscn" type="PackedScene" id=28]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 24 )
+region_rect = Rect2( 0, 0, 94, 24 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 24 )
+region_rect = Rect2( 0, 0, 94, 24 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 94, 24 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 11
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 25
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 25
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 25
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 25
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 25
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = ExtResource( 20 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 25
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 25
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 25
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 25
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[node name="HUD" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="GameOverLabel" type="Label" parent="."]
+visible = false
+margin_left = 120.0
+margin_top = 88.0
+margin_right = 520.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.827451, 0.0705882, 0.0705882, 1 )
+text = "SNAIL IS DIE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UpgradeWindow" type="Sprite" parent="."]
+visible = false
+position = Vector2( 320, 192 )
+z_index = 1
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="UpgradePanel01" type="Sprite" parent="UpgradeWindow"]
+position = Vector2( -109, 3 )
+z_index = 1
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="UpgradeButton01" type="Button" parent="UpgradeWindow/UpgradePanel01"]
+margin_left = -48.0
+margin_top = 75.0
+margin_right = 47.0
+margin_bottom = 99.0
+focus_neighbour_left = NodePath("../../UpgradePanel03/UpgradeButton03")
+focus_neighbour_right = NodePath("../../UpgradePanel02/UpgradeButton02")
+focus_next = NodePath("../../UpgradePanel02/UpgradeButton02")
+focus_previous = NodePath("../../UpgradePanel03/UpgradeButton03")
+custom_styles/hover = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="UpgradeDescription" type="RichTextLabel" parent="UpgradeWindow/UpgradePanel01"]
+margin_left = -41.9189
+margin_top = 2.04056
+margin_right = 47.0811
+margin_bottom = 75.0406
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_colors/selection_color = Color( 1, 0.72549, 0.403922, 1 )
+custom_constants/line_separation = 5
+bbcode_enabled = true
+bbcode_text = "[center]hydra gets one extra attack per level [/center]"
+text = "hydra gets one extra attack per level "
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="UpgradeTitle" type="RichTextLabel" parent="UpgradeWindow/UpgradePanel01"]
+margin_left = -49.0
+margin_top = -16.0
+margin_right = 49.0
+margin_bottom = -4.0
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 1, 0.72549, 0.403922, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]sawblade[/center]"
+text = "sawblade"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="UpgradeIcon" parent="UpgradeWindow/UpgradePanel01" instance=ExtResource( 3 )]
+position = Vector2( -8.62096, -51.0104 )
+
+[node name="UpgradePanel02" type="Sprite" parent="UpgradeWindow"]
+position = Vector2( 0, 3 )
+z_index = 1
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="UpgradeButton02" type="Button" parent="UpgradeWindow/UpgradePanel02"]
+margin_left = -48.0
+margin_top = 75.0
+margin_right = 47.0
+margin_bottom = 99.0
+focus_neighbour_left = NodePath("../../UpgradePanel01/UpgradeButton01")
+focus_neighbour_right = NodePath("../../UpgradePanel03/UpgradeButton03")
+focus_next = NodePath("../../UpgradePanel03/UpgradeButton03")
+focus_previous = NodePath("../../UpgradePanel01/UpgradeButton01")
+custom_styles/hover = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="UpgradeDescription" type="RichTextLabel" parent="UpgradeWindow/UpgradePanel02"]
+margin_left = -41.9189
+margin_top = 2.04056
+margin_right = 47.0811
+margin_bottom = 75.0406
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_constants/line_separation = 5
+bbcode_enabled = true
+bbcode_text = "[center]hydra gets one extra attack per level [/center]"
+text = "hydra gets one extra attack per level "
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="UpgradeTitle" type="RichTextLabel" parent="UpgradeWindow/UpgradePanel02"]
+margin_left = -49.0
+margin_top = -16.0
+margin_right = 49.0
+margin_bottom = -4.0
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 1, 0.72549, 0.403922, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]sawblade[/center]"
+text = "sawblade"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="UpgradeIcon" parent="UpgradeWindow/UpgradePanel02" instance=ExtResource( 3 )]
+position = Vector2( -8.16603, -51.0104 )
+
+[node name="UpgradePanel03" type="Sprite" parent="UpgradeWindow"]
+position = Vector2( 109, 3 )
+z_index = 1
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="UpgradeButton03" type="Button" parent="UpgradeWindow/UpgradePanel03"]
+margin_left = -48.0
+margin_top = 75.0
+margin_right = 47.0
+margin_bottom = 99.0
+focus_neighbour_left = NodePath("../../UpgradePanel02/UpgradeButton02")
+focus_neighbour_right = NodePath("../../UpgradePanel01/UpgradeButton01")
+focus_next = NodePath("../../UpgradePanel01/UpgradeButton01")
+focus_previous = NodePath("../../UpgradePanel02/UpgradeButton02")
+custom_styles/hover = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="UpgradeDescription" type="RichTextLabel" parent="UpgradeWindow/UpgradePanel03"]
+margin_left = -41.9189
+margin_top = 2.04056
+margin_right = 47.0811
+margin_bottom = 75.0406
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_constants/line_separation = 5
+bbcode_enabled = true
+bbcode_text = "[center]hydra gets one extra attack per level [/center]"
+text = "hydra gets one extra attack per level "
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="UpgradeTitle" type="RichTextLabel" parent="UpgradeWindow/UpgradePanel03"]
+margin_left = -49.0
+margin_top = -16.0
+margin_right = 49.0
+margin_bottom = -4.0
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 1, 0.72549, 0.403922, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]sawblade[/center]"
+text = "sawblade"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="UpgradeIcon" parent="UpgradeWindow/UpgradePanel03" instance=ExtResource( 3 )]
+position = Vector2( -8.166, -51.01 )
+
+[node name="TitleLabel" type="Label" parent="UpgradeWindow"]
+margin_left = -62.0
+margin_top = -113.946
+margin_right = 60.0
+margin_bottom = -87.9458
+custom_fonts/font = SubResource( 6 )
+text = "level up!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RerollLabel" type="Label" parent="UpgradeWindow"]
+margin_left = 90.1561
+margin_top = -134.704
+margin_right = 174.156
+margin_bottom = -108.704
+custom_fonts/font = SubResource( 7 )
+text = "rerolls available: 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RerollButton" type="Button" parent="UpgradeWindow"]
+margin_left = 109.602
+margin_top = -109.955
+margin_right = 149.602
+margin_bottom = -89.9551
+text = "test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBarBottom" type="TextureProgress" parent="."]
+margin_left = 303.584
+margin_top = 150.307
+margin_right = 336.584
+margin_bottom = 158.307
+value = 100.0
+texture_under = ExtResource( 13 )
+texture_progress = ExtResource( 27 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBarTop" type="TextureProgress" parent="."]
+margin_left = 303.584
+margin_top = 150.307
+margin_right = 338.584
+margin_bottom = 156.307
+value = 100.0
+texture_over = ExtResource( 14 )
+texture_progress = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="PauseScreen" type="Sprite" parent="."]
+visible = false
+position = Vector2( 320.149, 180 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TopBar" type="Sprite" parent="."]
+visible = false
+position = Vector2( 320, 8 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EXPStart" type="Sprite" parent="TopBar"]
+visible = false
+position = Vector2( 25, 0 )
+texture = ExtResource( 7 )
+
+[node name="EXPBar" type="Sprite" parent="TopBar"]
+visible = false
+position = Vector2( 26.6307, 0 )
+texture = ExtResource( 9 )
+
+[node name="EXPEnd" type="Sprite" parent="TopBar"]
+visible = false
+position = Vector2( 47.3019, 0.0520248 )
+texture = ExtResource( 8 )
+
+[node name="GameTimerLabel" type="Label" parent="."]
+visible = false
+margin_left = 302.04
+margin_top = -6.91527
+margin_right = 339.04
+margin_bottom = 19.0847
+custom_fonts/font = SubResource( 8 )
+text = "00:00"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerLevelLabel" type="Label" parent="."]
+visible = false
+margin_left = 610.853
+margin_top = -9.09626
+margin_right = 641.853
+margin_bottom = 16.9037
+custom_fonts/font = SubResource( 9 )
+text = "lvl01"
+align = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyCounterLabel" type="Label" parent="."]
+visible = false
+margin_left = 277.823
+margin_top = 9.34446
+margin_right = 365.823
+margin_bottom = 35.3445
+custom_fonts/font = SubResource( 10 )
+text = "trickled enemies: 10"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FPS" type="Label" parent="."]
+material = SubResource( 11 )
+margin_left = 601.322
+margin_top = 8.07138
+margin_right = 692.322
+margin_bottom = 34.0714
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "fps: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Currency" type="Label" parent="."]
+visible = false
+margin_left = 583.382
+margin_top = 35.3445
+margin_right = 623.382
+margin_bottom = 61.3445
+custom_fonts/font = SubResource( 13 )
+text = "$$$: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TotalCurrency" type="Label" parent="."]
+visible = false
+margin_left = 542.11
+margin_top = 61.3445
+margin_right = 617.11
+margin_bottom = 87.3445
+custom_fonts/font = SubResource( 14 )
+text = "Total $$$: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerLevel" type="Label" parent="."]
+margin_left = 179.0
+margin_top = 333.0
+margin_right = 237.0
+margin_bottom = 359.0
+custom_fonts/font = SubResource( 15 )
+text = "LVL 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Results" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( 140.025, 50.2636 )
+
+[node name="Scores" parent="." instance=ExtResource( 21 )]
+
+[node name="SkillBar" parent="." instance=ExtResource( 22 )]
+
+[node name="Equipment" parent="." instance=ExtResource( 25 )]
+position = Vector2( 66.3777, 306.777 )
+
+[node name="Upgrade" parent="." instance=ExtResource( 12 )]
+visible = false
+
+[node name="Treasure" parent="." instance=ExtResource( 26 )]
+visible = false
+position = Vector2( 320, 163.99 )
+
+[node name="Pause" parent="." instance=ExtResource( 23 )]
+
+[node name="Hearts" parent="." instance=ExtResource( 28 )]
+position = Vector2( 10.3181, 10.715 )
+
+[connection signal="focus_entered" from="UpgradeWindow/UpgradePanel01/UpgradeButton01" to="." method="_on_UpgradeButton01_focus_entered"]
+[connection signal="mouse_entered" from="UpgradeWindow/UpgradePanel01/UpgradeButton01" to="." method="_on_UpgradeButton01_mouse_entered"]
+[connection signal="pressed" from="UpgradeWindow/UpgradePanel01/UpgradeButton01" to="." method="_on_UpgradeButton01_pressed"]
+[connection signal="focus_entered" from="UpgradeWindow/UpgradePanel02/UpgradeButton02" to="." method="_on_UpgradeButton02_focus_entered"]
+[connection signal="mouse_entered" from="UpgradeWindow/UpgradePanel02/UpgradeButton02" to="." method="_on_UpgradeButton02_mouse_entered"]
+[connection signal="pressed" from="UpgradeWindow/UpgradePanel02/UpgradeButton02" to="." method="_on_UpgradeButton02_pressed"]
+[connection signal="focus_entered" from="UpgradeWindow/UpgradePanel03/UpgradeButton03" to="." method="_on_UpgradeButton03_focus_entered"]
+[connection signal="mouse_entered" from="UpgradeWindow/UpgradePanel03/UpgradeButton03" to="." method="_on_UpgradeButton03_mouse_entered"]
+[connection signal="pressed" from="UpgradeWindow/UpgradePanel03/UpgradeButton03" to="." method="_on_UpgradeButton03_pressed"]
+[connection signal="pressed" from="UpgradeWindow/RerollButton" to="." method="_on_RerollButton_pressed"]

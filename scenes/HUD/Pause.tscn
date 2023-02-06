@@ -1,0 +1,112 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/img/pause/paused.png" type="Texture" id=1]
+[ext_resource path="res://assets/img/pause/btn_end_run_unfocused_template.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/pause/btn_resume_unfocused_template.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/pause/btn_exit_game_unfocused_template.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/pause/btn_options_unfocused_unfocused.png" type="Texture" id=5]
+[ext_resource path="res://scripts/HUD/Pause.gd" type="Script" id=6]
+[ext_resource path="res://assets/img/pause/btn_options_pressed.png" type="Texture" id=7]
+[ext_resource path="res://assets/img/pause/btn_end_run_unfocused.png" type="Texture" id=8]
+[ext_resource path="res://assets/img/pause/btn_resume_unfocused.png" type="Texture" id=11]
+[ext_resource path="res://assets/img/pause/btn_exit_game_unfocused.png" type="Texture" id=13]
+[ext_resource path="res://assets/img/pause/btn_resume_pressed.png" type="Texture" id=14]
+[ext_resource path="res://assets/img/pause/btn_options_unfocused.png" type="Texture" id=15]
+[ext_resource path="res://assets/img/pause/btn_exit_game_pressed.png" type="Texture" id=17]
+[ext_resource path="res://assets/img/pause/btn_end_run_pressed.png" type="Texture" id=18]
+
+[node name="Pause" type="Node2D"]
+visible = false
+script = ExtResource( 6 )
+
+[node name="Panel" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="OptionsTemplate" type="Sprite" parent="Panel"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="EndRunTemplate" type="Sprite" parent="Panel"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ExitTemplate" type="Sprite" parent="Panel"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ResumeTemplate" type="Sprite" parent="Panel"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="OptionsButton" type="TextureButton" parent="Panel"]
+margin_left = 259.301
+margin_top = 122.84
+margin_right = 381.301
+margin_bottom = 147.84
+focus_neighbour_top = NodePath("../ResumeButton")
+focus_neighbour_bottom = NodePath("../EndRunButton")
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EndRunButton" type="TextureButton" parent="Panel"]
+margin_left = 259.301
+margin_top = 150.729
+margin_right = 381.301
+margin_bottom = 175.729
+focus_neighbour_top = NodePath("../OptionsButton")
+focus_neighbour_bottom = NodePath("../ExitButton")
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ExitButton" type="TextureButton" parent="Panel"]
+margin_left = 259.301
+margin_top = 179.171
+margin_right = 381.301
+margin_bottom = 204.171
+focus_neighbour_top = NodePath("../EndRunButton")
+focus_neighbour_bottom = NodePath("../ResumeButton")
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 17 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ResumeButton" type="TextureButton" parent="Panel"]
+margin_left = 259.301
+margin_top = 221.784
+margin_right = 381.301
+margin_bottom = 246.784
+focus_neighbour_top = NodePath("../ExitButton")
+focus_neighbour_bottom = NodePath("../OptionsButton")
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="GhostButton" type="Button" parent="Panel"]
+margin_left = -51.4411
+margin_top = 335.533
+margin_right = -39.4411
+margin_bottom = 355.533
+focus_neighbour_top = NodePath("../ResumeButton")
+focus_neighbour_bottom = NodePath("../OptionsButton")
+
+[connection signal="focus_entered" from="Panel/OptionsButton" to="." method="_on_OptionsButton_focus_entered"]
+[connection signal="mouse_entered" from="Panel/OptionsButton" to="." method="_on_OptionsButton_mouse_entered"]
+[connection signal="focus_entered" from="Panel/EndRunButton" to="." method="_on_EndRunButton_focus_entered"]
+[connection signal="mouse_entered" from="Panel/EndRunButton" to="." method="_on_EndRunButton_mouse_entered"]
+[connection signal="pressed" from="Panel/EndRunButton" to="." method="_on_EndRunButton_pressed"]
+[connection signal="focus_entered" from="Panel/ExitButton" to="." method="_on_ExitButton_focus_entered"]
+[connection signal="mouse_entered" from="Panel/ExitButton" to="." method="_on_ExitButton_mouse_entered"]
+[connection signal="pressed" from="Panel/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="focus_entered" from="Panel/ResumeButton" to="." method="_on_ResumeButton_focus_entered"]
+[connection signal="mouse_entered" from="Panel/ResumeButton" to="." method="_on_ResumeButton_mouse_entered"]
+[connection signal="pressed" from="Panel/ResumeButton" to="." method="_on_ResumeButton_pressed"]

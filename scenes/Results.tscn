@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/img/score_overview.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/scientifica.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/img/btn_finish.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/btn_finish_highlight.png" type="Texture" id=4]
+[ext_resource path="res://scripts/Results.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 11
+font_data = ExtResource( 2 )
+
+[node name="Results" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Panel" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="LevelLabel" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 64.0
+margin_right = 72.0
+margin_bottom = 81.0
+custom_fonts/font = SubResource( 1 )
+text = "21"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeSurvivedLabel" type="Label" parent="."]
+margin_left = 96.0
+margin_top = 64.0
+margin_right = 136.0
+margin_bottom = 81.0
+custom_fonts/font = SubResource( 1 )
+text = "10:35"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemiesKilledLabel" type="Label" parent="."]
+margin_left = 168.0
+margin_top = 64.0
+margin_right = 236.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 1 )
+text = "21,000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoldLabel" type="Label" parent="."]
+margin_left = 265.336
+margin_top = 64.0
+margin_right = 324.336
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.8, 0.65098, 0.164706, 1 )
+text = "21,000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FinishButton" type="TextureButton" parent="."]
+margin_left = 281.764
+margin_top = 223.506
+margin_right = 335.764
+margin_bottom = 247.506
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+texture_focused = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="mouse_entered" from="FinishButton" to="." method="_on_FinishButton_mouse_entered"]
+[connection signal="pressed" from="FinishButton" to="." method="_on_FinishButton_pressed"]

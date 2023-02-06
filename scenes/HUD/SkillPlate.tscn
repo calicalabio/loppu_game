@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/img/upgrade/btn_skill_pressed.png" type="Texture" id=1]
+[ext_resource path="res://assets/img/upgrade/btn_skill_unfocused.png" type="Texture" id=2]
+[ext_resource path="res://scripts/HUD/SkillPlate.gd" type="Script" id=3]
+[ext_resource path="res://assets/img/upgrade/level_up_guide.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/skills/skill_magic_missile.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/skills/skill_05.png" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/loppu_bold.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/fonts/loppu_mini.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+extra_spacing_bottom = -14
+font_data = ExtResource( 8 )
+
+[node name="SkillPlate" type="TextureButton"]
+margin_right = 218.0
+margin_bottom = 56.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Template" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 4 )
+
+[node name="Icon" type="Sprite" parent="."]
+position = Vector2( 7, 7 )
+texture = ExtResource( 5 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Frame" type="Sprite" parent="."]
+position = Vector2( 7, 7 )
+texture = ExtResource( 6 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Title" type="RichTextLabel" parent="."]
+margin_left = 36.0
+margin_top = -3.0
+margin_right = 217.0
+margin_bottom = 37.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+text = "Magic Missile"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="RichTextLabel" parent="."]
+margin_left = 36.0
+margin_top = 14.0
+margin_right = 216.0
+margin_bottom = 64.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+text = "damage - projectile count - duration"
+__meta__ = {
+"_edit_use_anchors_": false
+}

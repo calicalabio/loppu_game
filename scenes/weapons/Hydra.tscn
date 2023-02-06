@@ -1,0 +1,173 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://assets/spritesheets/hydra_idle_spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://assets/img/shadow_medium.png" type="Texture" id=2]
+[ext_resource path="res://assets/spritesheets/hydra_spawn_spritesheet.png" type="Texture" id=3]
+[ext_resource path="res://assets/spritesheets/hydra_shoot_up_spritesheet.png" type="Texture" id=4]
+[ext_resource path="res://scripts/weapons/Hydra.gd" type="Script" id=5]
+[ext_resource path="res://assets/spritesheets/hydra_shoot_down_spritesheet.png" type="Texture" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 28, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 56, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 28, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 56, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 84, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 112, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 140, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 3 )
+region = Rect2( 168, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 3 )
+region = Rect2( 196, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 3 )
+region = Rect2( 224, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 6 )
+region = Rect2( 28, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 6 )
+region = Rect2( 56, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 6 )
+region = Rect2( 84, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 6 )
+region = Rect2( 112, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 6 )
+region = Rect2( 140, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 6 )
+region = Rect2( 168, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 4 )
+region = Rect2( 28, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 4 )
+region = Rect2( 56, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 4 )
+region = Rect2( 84, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 4 )
+region = Rect2( 112, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 4 )
+region = Rect2( 140, 0, 28, 33 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 4 )
+region = Rect2( 168, 0, 28, 33 )
+
+[sub_resource type="SpriteFrames" id=27]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": false,
+"name": "spawn",
+"speed": 13.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"loop": true,
+"name": "shoot_down",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
+"loop": true,
+"name": "shoot_up",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=28]
+
+[node name="Hydra" type="Node2D" groups=[
+"treadmill",
+]]
+z_index = 9
+z_as_relative = false
+script = ExtResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -12 )
+z_index = 9
+z_as_relative = false
+frames = SubResource( 27 )
+animation = "spawn"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -0.7705 )
+z_index = 9
+z_as_relative = false
+texture = ExtResource( 2 )
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[node name="ExpiryTimer" type="Timer" parent="."]
+
+[node name="ShotDelayTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -12 )
+z_index = 9
+z_as_relative = false
+shape = SubResource( 28 )
+
+[connection signal="timeout" from="ShotDelayTimer" to="." method="_on_ShotDelayTimer_timeout"]

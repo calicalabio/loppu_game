@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/img/equipment/ui_treasure_select.png" type="Texture" id=1]
+[ext_resource path="res://assets/img/equipment/ui_treasure_select_template.png" type="Texture" id=4]
+[ext_resource path="res://scripts/HUD/Treasure.gd" type="Script" id=5]
+[ext_resource path="res://scenes/HUD/TreasurePlate.tscn" type="PackedScene" id=9]
+
+[node name="Treasure" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Panel" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Template" type="Sprite" parent="Panel"]
+visible = false
+texture = ExtResource( 4 )
+
+[node name="EquipmentOne" parent="Panel" instance=ExtResource( 9 )]
+margin_left = -109.124
+margin_top = -85.8851
+margin_right = 108.876
+margin_bottom = -20.8851
+focus_neighbour_top = NodePath("../EquipmentThree")
+focus_neighbour_bottom = NodePath("../EquipmentTwo")
+
+[node name="EquipmentTwo" parent="Panel" instance=ExtResource( 9 )]
+margin_left = -108.598
+margin_top = -18.3803
+margin_right = 109.402
+margin_bottom = 46.6197
+focus_neighbour_top = NodePath("../EquipmentOne")
+focus_neighbour_bottom = NodePath("../EquipmentThree")
+
+[node name="EquipmentThree" parent="Panel" instance=ExtResource( 9 )]
+margin_left = -109.019
+margin_top = 49.669
+margin_right = 108.981
+margin_bottom = 114.669
+focus_neighbour_top = NodePath("../EquipmentTwo")
+focus_neighbour_bottom = NodePath("../EquipmentOne")
+
+[connection signal="focus_entered" from="Panel/EquipmentOne" to="." method="_on_EquipmentOne_focus_entered"]
+[connection signal="mouse_entered" from="Panel/EquipmentOne" to="." method="_on_EquipmentOne_mouse_entered"]
+[connection signal="pressed" from="Panel/EquipmentOne" to="." method="_on_EquipmentOne_pressed"]
+[connection signal="focus_entered" from="Panel/EquipmentTwo" to="." method="_on_EquipmentTwo_focus_entered"]
+[connection signal="mouse_entered" from="Panel/EquipmentTwo" to="." method="_on_EquipmentTwo_mouse_entered"]
+[connection signal="pressed" from="Panel/EquipmentTwo" to="." method="_on_EquipmentTwo_pressed"]
+[connection signal="focus_entered" from="Panel/EquipmentThree" to="." method="_on_EquipmentThree_focus_entered"]
+[connection signal="mouse_entered" from="Panel/EquipmentThree" to="." method="_on_EquipmentThree_mouse_entered"]
+[connection signal="pressed" from="Panel/EquipmentThree" to="." method="_on_EquipmentThree_pressed"]

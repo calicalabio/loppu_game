@@ -1,0 +1,126 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://assets/spritesheets/meteor_indicator_spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://assets/spritesheets/meteor_spritesheet.png" type="Texture" id=2]
+[ext_resource path="res://scripts/weapons/Meteor.gd" type="Script" id=3]
+[ext_resource path="res://assets/img/meteor_aoe.png" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 54.7644
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 109, 29 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 109, 0, 109, 29 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 218, 0, 109, 29 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 327, 0, 109, 29 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 436, 0, 109, 29 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 545, 0, 109, 29 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 654, 0, 109, 29 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 763, 0, 109, 29 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 872, 0, 109, 29 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 981, 0, 109, 29 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 1090, 0, 109, 29 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 1199, 0, 109, 29 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 1308, 0, 109, 29 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 1417, 0, 109, 29 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 1526, 0, 109, 29 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 35, 47 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 2 )
+region = Rect2( 35, 0, 35, 47 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 2 )
+region = Rect2( 70, 0, 35, 47 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[node name="Meteor" type="Area2D" groups=[
+"treadmill",
+]]
+monitorable = false
+collision_mask = 5
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 1, 0.4 )
+shape = SubResource( 1 )
+
+[node name="Shadow" type="Sprite" parent="."]
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 4 )
+
+[node name="AOE" type="AnimatedSprite" parent="."]
+frames = SubResource( 17 )
+frame = 7
+playing = true
+
+[node name="MeteorSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -206.749, -382.705 )
+frames = SubResource( 21 )
+playing = true
+
+[node name="ImpactTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

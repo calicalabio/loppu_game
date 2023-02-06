@@ -1,0 +1,206 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/enemies/waves/WideSweep.gd" type="Script" id=1]
+
+[node name="WideSweep" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -0.433533, -0.358028 )
+
+[node name="Position2D2" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -32.0533, 16.1598 )
+
+[node name="Position2D3" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -68.8644, 33.6215 )
+
+[node name="Position2D4" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -105.676, 51.0831 )
+
+[node name="Position2D5" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -142.487, 68.5448 )
+
+[node name="Position2D6" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -184.961, 86.9503 )
+
+[node name="Position2D7" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -234.986, 104.412 )
+
+[node name="Position2D8" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -290.675, 119.514 )
+
+[node name="Position2D9" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( 23.6353, -23.011 )
+
+[node name="Position2D10" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( 55.727, -49.9114 )
+
+[node name="Position2D11" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( 86.4029, -83.419 )
+
+[node name="Position2D12" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( 117.079, -116.455 )
+
+[node name="Position2D13" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( 143.507, -151.85 )
+
+[node name="Position2D14" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( 176.543, -195.74 )
+
+[node name="Position2D15" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( 210.994, -241.046 )
+
+[node name="Position2D16" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( 237.864, -291.251 )
+
+[node name="Position2D17" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -349.741, 132.306 )
+
+[node name="Position2D18" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -205.741, 186.306 )
+
+[node name="Position2D19" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -233.741, 217.306 )
+
+[node name="Position2D20" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -259.741, 258.306 )
+
+[node name="Position2D21" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -281.741, 309.306 )
+
+[node name="Position2D22" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -299.741, 375.306 )
+
+[node name="Position2D23" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -308.741, 443.306 )
+
+[node name="Position2D24" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -308.741, 443.306 )
+
+[node name="Position2D25" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( 244.259, -106.694 )
+
+[node name="Position2D26" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( 280.259, -135.694 )
+
+[node name="Position2D27" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( 324.259, -163.694 )
+
+[node name="Position2D28" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( 381.259, -185.694 )
+
+[node name="Position2D29" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( 451.259, -203.694 )
+
+[node name="Position2D30" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( 522.259, -207.694 )
+
+[node name="Position2D31" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( 622.259, -324.694 )
+
+[node name="Position2D32" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( 566.259, -332.694 )
+
+[node name="Position2D33" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( 501.259, -328.694 )
+
+[node name="Position2D34" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( 430.259, -313.694 )
+
+[node name="Position2D35" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( 363.259, -285.694 )
+
+[node name="Position2D36" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -375.741, 260.306 )
+
+[node name="Position2D37" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -404.741, 314.306 )
+
+[node name="Position2D38" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -422.741, 382.306 )
+
+[node name="Position2D39" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -431.741, 457.306 )
+
+[node name="Position2D40" type="Position2D" parent="." groups=[
+"WideSweep",
+]]
+position = Vector2( -431.741, 539.306 )

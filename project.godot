@@ -1,0 +1,240 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Weapon",
+"class": "BinglingBase",
+"language": "GDScript",
+"path": "res://scripts/weapons/definitions/BinglingBase.gd"
+}, {
+"base": "Weapon",
+"class": "BoomerangBase",
+"language": "GDScript",
+"path": "res://scripts/weapons/definitions/BoomerangBase.gd"
+}, {
+"base": "Weapon",
+"class": "ChainLightningBase",
+"language": "GDScript",
+"path": "res://scripts/weapons/definitions/ChainLightningBase.gd"
+}, {
+"base": "Weapon",
+"class": "DiscoBallBase",
+"language": "GDScript",
+"path": "res://scripts/weapons/definitions/DiscoBallBase.gd"
+}, {
+"base": "Reference",
+"class": "Equipment",
+"language": "GDScript",
+"path": "res://scripts/equipment/definitions/Equipment.gd"
+}, {
+"base": "Reference",
+"class": "EquipmentService",
+"language": "GDScript",
+"path": "res://scripts/services/EquipmentService.gd"
+}, {
+"base": "Weapon",
+"class": "FrozenOrbBase",
+"language": "GDScript",
+"path": "res://scripts/weapons/definitions/FrozenOrbBase.gd"
+}, {
+"base": "Reference",
+"class": "GameService",
+"language": "GDScript",
+"path": "res://scripts/services/GameService.gd"
+}, {
+"base": "Weapon",
+"class": "HydraBase",
+"language": "GDScript",
+"path": "res://scripts/weapons/definitions/HydraBase.gd"
+}, {
+"base": "Weapon",
+"class": "ImpaleBase",
+"language": "GDScript",
+"path": "res://scripts/weapons/definitions/ImpaleBase.gd"
+}, {
+"base": "Equipment",
+"class": "KitsuneMaskDefinition",
+"language": "GDScript",
+"path": "res://scripts/equipment/definitions/KitsuneMaskDefinition.gd"
+}, {
+"base": "Weapon",
+"class": "MeteorBase",
+"language": "GDScript",
+"path": "res://scripts/weapons/definitions/MeteorBase.gd"
+}, {
+"base": "Weapon",
+"class": "MissileBase",
+"language": "GDScript",
+"path": "res://scripts/weapons/definitions/MissileBase.gd"
+}, {
+"base": "Equipment",
+"class": "PlatemailDefinition",
+"language": "GDScript",
+"path": "res://scripts/equipment/definitions/PlatemailDefinition.gd"
+}, {
+"base": "Weapon",
+"class": "SawBladeBase",
+"language": "GDScript",
+"path": "res://scripts/weapons/definitions/SawBladeBase.gd"
+}, {
+"base": "Weapon",
+"class": "ShortSwordBase",
+"language": "GDScript",
+"path": "res://scripts/weapons/definitions/ShortSwordBase.gd"
+}, {
+"base": "Equipment",
+"class": "ShortSwordDefinition",
+"language": "GDScript",
+"path": "res://scripts/equipment/definitions/ShortSwordDefinition.gd"
+}, {
+"base": "Equipment",
+"class": "SkullCapDefinition",
+"language": "GDScript",
+"path": "res://scripts/equipment/definitions/SkullCapDefinition.gd"
+}, {
+"base": "Weapon",
+"class": "TeslaCoilBase",
+"language": "GDScript",
+"path": "res://scripts/weapons/definitions/TeslaCoilBase.gd"
+}, {
+"base": "Reference",
+"class": "Upgrade",
+"language": "GDScript",
+"path": "res://scripts/weapons/Upgrade.gd"
+}, {
+"base": "Reference",
+"class": "UpgradeService",
+"language": "GDScript",
+"path": "res://scripts/services/UpgradeService.gd"
+}, {
+"base": "Reference",
+"class": "Wave",
+"language": "GDScript",
+"path": "res://scripts/enemies/Wave.gd"
+}, {
+"base": "Reference",
+"class": "WaveService",
+"language": "GDScript",
+"path": "res://scripts/services/WaveService.gd"
+}, {
+"base": "Reference",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://scripts/weapons/Weapon.gd"
+}, {
+"base": "Equipment",
+"class": "WitchHatDefinition",
+"language": "GDScript",
+"path": "res://scripts/equipment/definitions/WitchHatDefinition.gd"
+}, {
+"base": "Equipment",
+"class": "WoodenShieldDefinition",
+"language": "GDScript",
+"path": "res://scripts/equipment/definitions/WoodenShieldDefinition.gd"
+} ]
+_global_script_class_icons={
+"BinglingBase": "",
+"BoomerangBase": "",
+"ChainLightningBase": "",
+"DiscoBallBase": "",
+"Equipment": "",
+"EquipmentService": "",
+"FrozenOrbBase": "",
+"GameService": "",
+"HydraBase": "",
+"ImpaleBase": "",
+"KitsuneMaskDefinition": "",
+"MeteorBase": "",
+"MissileBase": "",
+"PlatemailDefinition": "",
+"SawBladeBase": "",
+"ShortSwordBase": "",
+"ShortSwordDefinition": "",
+"SkullCapDefinition": "",
+"TeslaCoilBase": "",
+"Upgrade": "",
+"UpgradeService": "",
+"Wave": "",
+"WaveService": "",
+"Weapon": "",
+"WitchHatDefinition": "",
+"WoodenShieldDefinition": ""
+}
+
+[application]
+
+config/name="hacknslash_prototype"
+run/main_scene="res://scenes/Menu.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://scripts/Global.gd"
+
+[display]
+
+window/size/width=640
+window/size/height=360
+window/size/test_width=1280
+window/size/test_height=720
+window/vsync/use_vsync=false
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[input]
+
+ui_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
+down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+pause={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[physics]
+
+common/enable_pause_aware_picking=true
+2d/cell_size=64
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
